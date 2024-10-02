@@ -1,33 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Card from "./components/card";
+import Cart from "./components/cart";
+import { PRODUCTS_DATA } from "./lib/mockData";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container max-lg mx-auto">
+        <h1>React My Store App</h1>
+
+        <div className="grid grid-cols-4 gap-2">
+          <div className="col-span-2">
+            <h2>Products</h2>
+            <ul className="space-y-2">
+              {PRODUCTS_DATA.map((product) => (
+                <Card key={product.id} product={product} />
+              ))}
+            </ul>
+          </div>
+          <div className="col-span-2">
+            <h2>Cart</h2>
+            <Cart />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
