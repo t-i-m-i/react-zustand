@@ -1,5 +1,3 @@
-"use client";
-
 import { useStore } from "../store/store";
 import { Product } from "../types/product";
 import ChangeQtyButtons from "./ChangeQtyButtons";
@@ -36,13 +34,16 @@ export default function Card({ product }: ProductProps) {
       <li className="border rounded p-4">
         <h2>{product.title}</h2>
         <div>{product.price}</div>
-        {!cartProduct ? <button
-          className="px-4 py-2 bg-green-700 text-white rounded"
-          onClick={() => addProduct(product)}
-        >
-          Add to cart
-        </button> : <ChangeQtyButtons productId={product.id} />
-        }
+        {cartProduct ? (
+          <ChangeQtyButtons productId={product.id} />
+        ) : (
+          <button
+            className="px-4 py-2 bg-green-700 text-white rounded"
+            onClick={() => addProduct(product)}
+          >
+            Add to cart
+          </button>
+        )}
       </li>
     </>
   )

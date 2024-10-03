@@ -1,3 +1,4 @@
+import { useShallow } from "zustand/react/shallow";
 import { useStore } from "../store/store";
 
 interface Props {
@@ -6,14 +7,25 @@ interface Props {
 
 export default function ChangeQtyButtons({ productId }: Props) {
 
-  const { getProductById, incQty, decQty } = useStore();
+  const { getProductById, incQty, decQty } = useStore(
+    useShallow((state) => ({
+      getProductById: state.getProductById,
+      incQty: state.incQty,
+      decQty: state.decQty
+    }))
+  );
+
   const product = getProductById(productId);
 
   return (
     <>
-      <button onClick={() => decQty(productId)} className="px-2 py-1 bg-green-700 text-white rounded">-</button>
-      <span className="px-2 py-1">{ product?.qty }</span>
-      <button onClick={() => incQty(productId)} className="px-2 py-1 bg-green-700 text-white rounded">+</button>
+      {product && (
+        <div>
+          <button onClick={() => decQty(product.id)} className="px-2 py-1 bg-green-700 text-white rounded">-</button>
+          <span className="px-2 py-1">{ product.qty }</span>
+          <button onClick={() => incQty(product.id)} className="px-2 py-1 bg-green-700 text-white rounded">+</button>
+        </div>
+      )}
     </>
   )
 }
