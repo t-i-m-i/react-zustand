@@ -16,5 +16,5 @@ npm install immer
 npx tailwindcss init -p
 npm install -D tailwindcss postcss autoprefixer
 ```
-Post installation configuration: https://tailwindcss.com/docs/guides/vite
+Post-installation configuration: https://tailwindcss.com/docs/guides/vite
 
