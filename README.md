@@ -18,3 +18,20 @@ npm install -D tailwindcss postcss autoprefixer
 ```
 Post-installation configuration: https://tailwindcss.com/docs/guides/vite
 
+## 4. Install Sass
+```
+npm install -D sass-embedded
+```
+Add to vite.config.ts:
+```
+css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern'
+      }
+    }
+  }
+```
+
+Read more: https://vite.dev/config/shared-options#css-preprocessoroptions
+

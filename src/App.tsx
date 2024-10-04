@@ -1,7 +1,6 @@
-import Card from "./components/card";
-import Cart from "./components/cart";
+import Card from "./components/Card";
+import Cart from "./components/Cart";
 import { PRODUCTS_DATA } from "./lib/mockData";
-import './App.css'
 
 function App() {
   return (

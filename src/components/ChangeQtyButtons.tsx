@@ -16,6 +16,7 @@ export default function ChangeQtyButtons({ productId }: Props) {
   // - This will optimize the component by only re-rendering when the selected parts change
   // - It's more efficient in avoiding unnecessary renders caused by other unrelated state changes in the store.
   const { getProductById, incQty, decQty } = useStore(
+    // shallow comparison: won’t check nested objects for equality — only the top-level references are compared. No need for flat objects. Usefull for nested structures.
     useShallow((state) => ({
       getProductById: state.getProductById,
       incQty: state.incQty,

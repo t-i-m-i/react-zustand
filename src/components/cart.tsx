@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useStore } from "../store/store";
 import ChangeQtyButtons from "./ChangeQtyButtons";
 
+// import s from "./Cart.module.scss";
+
 export default function Cart() {
 
   const cart = useStore();
@@ -27,7 +29,7 @@ export default function Cart() {
         </thead>
         <tbody>
         {cart.products.map((product) => (
-          <tr>
+          <tr key={product.id}>
             <td className="border p-2">{product.title}</td>
             <td className="border p-2 text-center">
               <ChangeQtyButtons productId={product.id} />
