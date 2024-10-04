@@ -1,16 +1,6 @@
-.block {
-  box-shadow: 0 1px 2px #2b2d310a,0 3px 4px #2b2d310a;
-  border-radius: 5px;
-  background-color: #fbfcfd;
-  background-clip: border-box;
-  overflow: hidden;
-  
-  &__title {
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 1px #2b2d310f,0 5px #2b2d3105;
-  }
-  &__details {
-    padding: 10px 20px;
-  }
-}
+// .debug {
+//   position: absolute;
+//   right: 16px;
+//   top: 16px;
+//   text-align: right;
+// }

@@ -1,5 +1,6 @@
 import { useShallow } from "zustand/react/shallow";
 import { useStore } from "../store/store";
+import { useEffect } from "react";
 
 interface Props {
   productId: string;
@@ -15,24 +16,39 @@ export default function ChangeQtyButtons({ productId }: Props) {
   // - This approach uses a selector function to explicitly pick the relevant state
   // - This will optimize the component by only re-rendering when the selected parts change
   // - It's more efficient in avoiding unnecessary renders caused by other unrelated state changes in the store.
-  const { getProductById, incQty, decQty } = useStore(
+  const { getProductById, incQty, decQty, setTotal } = useStore(
     // shallow comparison: won’t check nested objects for equality — only the top-level references are compared. No need for flat objects. Usefull for nested structures.
     useShallow((state) => ({
       getProductById: state.getProductById,
       incQty: state.incQty,
-      decQty: state.decQty
+      decQty: state.decQty,
+      setTotal: state.setTotal,
     }))
   );
 
   const product = getProductById(productId);
 
+  useEffect(() => {
+    const unSub = useStore.subscribe(
+      (state) => state.products, 
+      (products) => {
+        setTotal(
+          products.reduce((acc, item) => acc + item.price * item.qty, 0)
+        );
+      },
+      { fireImmediately: true }
+    )
+    return unSub;
+  }, [setTotal]);
+  
+
   return (
     <>
       {product && (
         <div>
-          <button onClick={() => decQty(product.id)} className="px-2 py-1 bg-green-700 text-white rounded">-</button>
-          <span className="px-2 py-1">{ product.qty }</span>
-          <button onClick={() => incQty(product.id)} className="px-2 py-1 bg-green-700 text-white rounded">+</button>
+          <button onClick={() => decQty(product.id)} className="w-8 h-8 bg-green-700 text-white rounded">-</button>
+          <span className="inline-block px-2 h-8 py-1 min-w-12 text-center">{ product.qty }</span>
+          <button onClick={() => incQty(product.id)} className="w-8 h-8 bg-green-700 text-white rounded">+</button>
         </div>
       )}
     </>

@@ -43,7 +43,7 @@ export default function Card({ product }: ProductProps) {
             <ChangeQtyButtons productId={product.id} />
           ) : (
             <button
-              className="px-4 py-2 bg-green-700 text-white rounded"
+              className="px-4 h-8 bg-green-700 text-white rounded"
               onClick={() => addProduct(product)}
             >
               Add to cart
