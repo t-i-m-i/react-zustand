@@ -47,3 +47,18 @@ css: {
 
 Read more: https://vite.dev/config/shared-options#css-preprocessoroptions
 
+### 5. Testing
+
+#### Installing dependencies
+```
+npm install vitest @vitest/ui jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event --save-dev
+```
+#### Configuring tests in Vite
+
+TODO
+
+#### Deps description
+
+TODO 
+
+

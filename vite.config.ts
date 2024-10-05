@@ -13,5 +13,11 @@ export default defineConfig({
     // modules: {
     //   generateScopedName: '[name]__[local]___[hash:base64:5]',
     // }
-  }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+  },
 })
