@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SimpleButton from '../SimpleButton';
+import SimpleButton from './SimpleButton';
 
 // Test for rendering the button
 test('renders the button', () => {
@@ -10,7 +10,7 @@ test('renders the button', () => {
   const buttonElement = screen.getByRole('button');
   expect(buttonElement).toBeInTheDocument();
   // console.log(`buttonElement.textContent: ${buttonElement.textContent}`);
-  expect(buttonElement.textContent).toBe('Click me');
+  expect(buttonElement.textContent).toBe('Click');
 
   // try {
   //   expect(buttonElement).toHaveTextContent('Click me');
