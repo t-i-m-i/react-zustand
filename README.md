@@ -66,15 +66,32 @@ https://github.com/t-i-m-i/react-zustand/commit/e6af6c5bc9f886ca5812af9ec3f2842c
 
 ### 6. Add tests to run before commit
 
-#### Install Husky and Lint-Staged
-1. Install lint-staged and husky
-2. Set up a Husky pre-commit hook
-3. Add lint-staged configuration in your package.json
+Install husky and lint-staged
 ```
-npm install --save-dev lint-staged husky
-npx husky install
-npx husky add .husky/pre-commit "npx lint-staged"
+npm install --save-dev husky lint-staged
 ```
+Set up Husky in your project, create a .husky directory, and create a sample pre-commit hook with command:
+```
+npx husky-init
+```
+
+Add to package.json:
+```
+"scripts": {
+  "test:staged": "vitest --run",
+},
+"lint-staged": {
+    "**.*.{js,jsx,ts,tsx}": [
+      "npm run test:staged"
+    ]
+  },
+```
+
+Add to pre-commit hook:
+```
+npx lint-staged
+```
+
 https://github.com/t-i-m-i/react-zustand/commit/e912303c1a7a51d3641aaf3b2a0b7597ee9db574
 
 TODO fix husky tests:
