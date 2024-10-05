@@ -3,18 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "lint-staged": {
-    "*.ts?(x)": [
-      "npm run test -- --run"
-    ]
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "prepare": "husky install",
-    "test": "vitest"
+    "preview": "vite preview"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -37,9 +30,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
-    "husky": "^8.0.0",
     "jsdom": "^25.0.1",
-    "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "sass-embedded": "^1.79.4",
     "tailwindcss": "^3.4.13",

@@ -1,5 +1,6 @@
 import Card from "./components/Card";
 import Cart from "./components/Cart";
+import SimpleButton from "./components/SimpleButton";
 import { PRODUCTS_DATA } from "./lib/mockData";
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
     <>
       <div className="max-lg mx-auto">
         <h1>React My Store App</h1>
+
+        <div>
+          <SimpleButton />
+        </div>
 
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-2">
