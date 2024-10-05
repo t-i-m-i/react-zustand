@@ -49,16 +49,31 @@ Read more: https://vite.dev/config/shared-options#css-preprocessoroptions
 
 ### 5. Testing
 
-#### Installing dependencies
+#### Install Vitest and other required dependencies
 ```
 npm install vitest @vitest/ui jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event --save-dev
 ```
-#### Configuring tests in Vite
+#### Update the Vite configuration to support Vitest
 
-TODO
+https://github.com/t-i-m-i/react-zustand/commit/e6af6c5bc9f886ca5812af9ec3f2842c6d0942b2
 
 #### Deps description
 
-TODO 
+- `vitest`: Testing framework.
+- `@vitest/ui`: Optional UI for running Vitest.
+- `jsdom`: For mocking the DOM in tests.
+- `@testing-library/react` and `@testing-library/jest-dom`: Useful for writing React component tests.
+
+### 6. Add tests to run before commit
+
+#### Install Husky and Lint-Staged
+1. Install lint-staged and husky
+2. Set up a Husky pre-commit hook
+3. Add lint-staged configuration in your package.json
+```
+npm install --save-dev lint-staged husky
+npx husky install
+npx husky add .husky/pre-commit "npx lint-staged"
+```
 
 
