@@ -75,5 +75,6 @@ npm install --save-dev lint-staged husky
 npx husky install
 npx husky add .husky/pre-commit "npx lint-staged"
 ```
+https://github.com/t-i-m-i/react-zustand/commit/e912303c1a7a51d3641aaf3b2a0b7597ee9db574
 
 
