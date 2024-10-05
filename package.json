@@ -12,11 +12,6 @@
     "test:staged": "vitest --run",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "npm run test:staged"
-    ]
-  },
   "dependencies": {
     "clsx": "^2.1.1",
     "immer": "^10.1.1",
@@ -48,5 +43,15 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vitest": "^2.1.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run test:staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
   }
 }

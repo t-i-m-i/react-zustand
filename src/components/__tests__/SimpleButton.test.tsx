@@ -10,7 +10,7 @@ test('renders the button', () => {
   const buttonElement = screen.getByRole('button');
   expect(buttonElement).toBeInTheDocument();
   // console.log(`buttonElement.textContent: ${buttonElement.textContent}`);
-  expect(buttonElement.textContent).toBe('Click me');
+  expect(buttonElement.textContent).toBe('Click me now');
 
   // try {
   //   expect(buttonElement).toHaveTextContent('Click me');
