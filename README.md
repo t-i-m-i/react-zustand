@@ -81,26 +81,33 @@ Add to package.json:
   "test:staged": "vitest --run",
 },
 "lint-staged": {
-    "**.*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "npm run test:staged"
     ]
   },
+"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 ```
 
 Add to pre-commit hook:
-```
-npx lint-staged
-```
 
-debug:
+`npx lint-staged`
+
+Debug:
+```
 npm run test:staged
+
 sh .husky/pre-commit
 
-https://github.com/t-i-m-i/react-zustand/commit/e912303c1a7a51d3641aaf3b2a0b7597ee9db574
+npx lint-staged
 
-TODO fix husky tests:
-https://bluesockets.com/react/react-js-unit-testing-vitest-husky-lint-staged-eslint-prettier/
-https://dev.to/rajaerobinson/reactjs-vitest-unit-testing-husky-lint-staged-eslint-prettier-2e50
-https://leandroaps.medium.com/building-a-modern-react-app-with-vite-vitest-typescript-eslint-prettier-and-husky-abc7a9876e9d
+npx vitest --run
+```
 
-https://medium.com/@rajaerobinson/react-js-vite-unit-testing-vitest-husky-lint-staged-eslint-prettier-497e158e9579
+`git config core.hooksPath` - shall show `.husky`
+in case of trouble remove `.git/hooks`
+
+
