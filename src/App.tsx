@@ -5,7 +5,7 @@ import { PRODUCTS_DATA } from "./lib/mockData";
 function App() {
   return (
     <>
-      <div className="container max-lg mx-auto">
+      <div className="max-lg mx-auto">
         <h1>React My Store App</h1>
 
         <div className="grid grid-cols-4 gap-4">

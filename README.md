@@ -1,24 +1,36 @@
-# Installation from the ground up
+# React Zustand
+- React State with Zustand for the client side
+- Store, Slices, State, Actions, Subscriptions
+- TypeScript
+- Vitest
 
-## 1. Scaffolding Vite Project
+## Installing and running
+```
+npm install
+npm run dev
+```
+
+## Building from the ground up
+
+### 1. Scaffolding Vite Project
 ```
 npm create vite@latest . -- --template react-ts
 ```
 
-## 2. Add Zustand and Immer
+### 2. Add Zustand and Immer
 ```
 npm install zustand@4.5.2
 npm install immer
 ```
 
-## 3. Add Tailwind CSS 
+### 3. Add Tailwind CSS 
 ```
 npx tailwindcss init -p
 npm install -D tailwindcss postcss autoprefixer
 ```
 Post-installation configuration: https://tailwindcss.com/docs/guides/vite
 
-## 4. Install Sass
+### 4. Install Sass
 ```
 npm install -D sass-embedded
 ```
