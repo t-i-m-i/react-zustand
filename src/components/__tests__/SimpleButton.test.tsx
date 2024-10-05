@@ -9,7 +9,14 @@ test('renders the button', () => {
   // Check if the button is rendered
   const buttonElement = screen.getByRole('button');
   expect(buttonElement).toBeInTheDocument();
-  expect(buttonElement).toHaveTextContent('Click me');
+  // console.log(`buttonElement.textContent: ${buttonElement.textContent}`);
+  expect(buttonElement.textContent).toBe('Click me');
+
+  // try {
+  //   expect(buttonElement).toHaveTextContent('Click me');
+  // } catch (error) {
+  //   console.error('Assertion failed:', error);
+  // }
 });
 
 // Test for handling the click event
@@ -23,6 +30,7 @@ test('handles click and updates text', async () => {
 
   // Use waitFor to check the updated text after the state change
   await waitFor(() => {
-    expect(buttonElement).toHaveTextContent('Clicked');
+    // console.log(`buttonElement.textContent: ${buttonElement.textContent}`);
+    expect(buttonElement.textContent).toBe('Clicked');
   });
 });
