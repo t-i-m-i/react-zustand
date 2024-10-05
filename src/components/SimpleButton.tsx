@@ -8,7 +8,7 @@ export default function SimpleButton() {
   return (
     <>
       <button onClick={handleClick}>
-        {clicked ? 'Clicked buu2' : 'Click me'}
+        {clicked ? 'Clicked buu 4' : 'Click me'}
       </button>
     </>
   )
