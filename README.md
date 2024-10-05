@@ -77,4 +77,9 @@ npx husky add .husky/pre-commit "npx lint-staged"
 ```
 https://github.com/t-i-m-i/react-zustand/commit/e912303c1a7a51d3641aaf3b2a0b7597ee9db574
 
+TODO fix husky tests:
+https://bluesockets.com/react/react-js-unit-testing-vitest-husky-lint-staged-eslint-prettier/
+https://dev.to/rajaerobinson/reactjs-vitest-unit-testing-husky-lint-staged-eslint-prettier-2e50
+https://leandroaps.medium.com/building-a-modern-react-app-with-vite-vitest-typescript-eslint-prettier-and-husky-abc7a9876e9d
 
+https://medium.com/@rajaerobinson/react-js-vite-unit-testing-vitest-husky-lint-staged-eslint-prettier-497e158e9579
