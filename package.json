@@ -48,10 +48,5 @@
     "src/**/*.{js,jsx,ts,tsx}": [
       "npm run test:staged"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

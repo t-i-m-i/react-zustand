@@ -85,12 +85,9 @@ Add to package.json:
       "npm run test:staged"
     ]
   },
-"husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
 ```
+~~`"husky": { "hooks": { "pre-commit": "lint-staged" } }`~~ -
+Husky's v7+ approach: Husky now uses shell scripts inside .husky/ to manage Git hooks. The package.json configuration for hooks (like the "pre-commit" entry) was more common in older Husky versions but is deprecated in modern setups. With .husky/pre-commit, the hook is defined there and is executed directly.
 
 Add to pre-commit hook:
 
@@ -109,5 +106,3 @@ npx vitest --run
 
 `git config core.hooksPath` - shall show `.husky`
 in case of trouble remove `.git/hooks`
-
-
