@@ -15,7 +15,9 @@ export default function User() {
 
   useEffect(() => {
     async function fetchData() {
-      await fetchUser();
+      if (!userAddress) {
+        await fetchUser();
+      } 
     }
     fetchData();
   }, []);

@@ -26,6 +26,14 @@ export const createUserSlice: StateCreator<
         }),
     fetchUser: async () => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // const response = await fetch('/api/user');
+		// const data = await response.json();
+		// set({
+        //     userName: data.userName,
+        //     userAddress: data.userAddress,  
+        // })
+
         set({
           userName: 'Hulk Incredible',
           userAddress: '',  
