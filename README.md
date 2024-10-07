@@ -2,7 +2,7 @@
 - React State with Zustand for the client side
 - Store, Slices, State, Actions, Subscriptions
 - TypeScript
-- Vitest, Husky
+- Vitest, Testing Library, Husky
 
 ## Installing and running
 ```

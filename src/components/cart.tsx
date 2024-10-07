@@ -10,12 +10,13 @@ export default function Cart() {
 
   const store_debug = useStore();
 
-  const { products, removeProduct, reset, total } = useStore(
+  const { products, removeProduct, reset, total, userAddress } = useStore(
     useShallow((state) => ({
       products: state.products,
       removeProduct: state.removeProduct,
       reset: state.reset,
       total: state.total,
+      userAddress: state.userAddress
     }))
   )
 
@@ -69,6 +70,12 @@ export default function Cart() {
             <button className="px-2 h-8 bg-red-700 text-white rounded" onClick={reset}>Empty cart</button>
           </p>
         )}
+      </div>
+      <div className="my-4">
+        <p className="mb-1">Delivery address:</p>
+        <p>
+          {userAddress && <span className="bg-yellow-200 px-2 py-1 inline-block font-bold">{userAddress}</span>}
+        </p>
       </div>
     </>
   );

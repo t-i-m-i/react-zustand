@@ -1,4 +1,4 @@
-import { Product } from '@/types/product';
+import { Product } from '../types/product';
 
 export const PRODUCTS_DATA: Product[] = [
 	{ id: '1', price: 1100, title: 'S24 Ultra' },

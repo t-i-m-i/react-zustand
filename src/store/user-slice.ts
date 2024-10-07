@@ -2,13 +2,12 @@ import { StateCreator } from "zustand";
 
 type UserState = {
     userName: string;
-    fullName: string;
-    age: number;
-    address: string;
+    userAddress: string;
 };
 
 type UserActions = {
-    setAddress: (address: string) => void;
+    setAddress: (userAddress: string) => void;
+    fetchUser: () => Promise<void>;
 };
 
 export type UserSlice = UserState & UserActions;
@@ -19,12 +18,17 @@ export const createUserSlice: StateCreator<
     [],
     UserSlice
 > = (set) => ({
-    address: '',
-    age: 0,
-    fullName: '',
+    userAddress: '',
     userName: '',
-    setAddress: (address) => 
+    setAddress: (userAddress) => 
         set((state) => {
-            state.address = address;
+            state.userAddress = userAddress;
         }),
+    fetchUser: async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        set({
+          userName: 'Hulk Incredible',
+          userAddress: '',  
+        });
+    }
 });
