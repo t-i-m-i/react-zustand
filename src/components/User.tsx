@@ -26,6 +26,13 @@ export default function User() {
     <>
       <div className="px-5 py-2.5 border rounded border-green-700">
         <div className="mb-1">Name: {userName}</div>
+
+        {/* 
+
+        -- zod validation 
+        -- react hook form
+        
+        */}
         
         <label htmlFor="address" className="mb-1 block">Delivery address:</label>
         <input id="address" value={userAddress} onChange={(e) => setAddress(e.target.value)} type="text" className="px-2 py-2 border w-full"  />
