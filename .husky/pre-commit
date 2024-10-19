@@ -5,4 +5,4 @@ echo "Husky pre-commit hook is running..."
 echo "Current staged files:"
 git diff --cached --name-only
 
-npx lint-staged
+npx lint-staged --verbose

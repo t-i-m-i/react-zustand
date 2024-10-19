@@ -64,42 +64,35 @@ https://github.com/t-i-m-i/react-zustand/commit/e6af6c5bc9f886ca5812af9ec3f2842c
 - `jsdom`: For mocking the DOM in tests.
 - `@testing-library/react` and `@testing-library/jest-dom`: Useful for writing React component tests.
 
-### 6. Add tests to run before commit
+### 6. Add precommit eslint hook
 
 Install husky and lint-staged
 ```
-npm install --save-dev husky lint-staged
+npm install husky lint-staged --save-dev
 ```
 Set up Husky in your project, create a .husky directory, and create a sample pre-commit hook with command:
 ```
 npx husky-init
 ```
 
-Add to package.json:
-```
-"scripts": {
-  "test:staged": "vitest --run",
-},
-"lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "npm run test:staged"
-    ]
-  },
-```
-~~`"husky": { "hooks": { "pre-commit": "lint-staged" } }`~~ -
-Husky's v7+ approach: Husky now uses shell scripts inside .husky/ to manage Git hooks. The package.json configuration for hooks (like the "pre-commit" entry) was more common in older Husky versions but is deprecated in modern setups. With .husky/pre-commit, the hook is defined there and is executed directly.
-
 Add to pre-commit hook:
 
-`npx lint-staged`
+`npx lint-staged --verbose`
+
+Add config file `.lintstagedrc` with content:
+```
+{
+  "*.ts": "eslint",
+  "*.tsx": "eslint"
+}
+```
+
 
 Debug:
 ```
-npm run test:staged
-
 sh .husky/pre-commit
 
-npx lint-staged
+npx lint-staged --verbose
 
 npx vitest --run
 ```

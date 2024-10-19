@@ -9,7 +9,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:staged": "vitest --run",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -43,10 +42,5 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vitest": "^2.1.2"
-  },
-  "lint-staged": {
-    "src/**/*.test.tsx": [
-      "npm run test:staged"
-    ]
   }
 }
