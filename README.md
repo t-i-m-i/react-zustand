@@ -93,9 +93,17 @@ Debug:
 sh .husky/pre-commit
 
 npx lint-staged --verbose
-
-npx vitest --run
 ```
 
 `git config core.hooksPath` - shall show `.husky`
 in case of trouble remove `.git/hooks`
+
+7. How to run ESLint from console
+All src folder:
+```
+npx eslint src
+```
+Only staged files:
+```
+npx lint-staged --verbose
+```
